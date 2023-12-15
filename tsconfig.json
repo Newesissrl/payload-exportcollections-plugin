@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "allowJs": true,
     "strict": false,
+    "declaration": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "jsx": "react",
-    "declaration": true
+    "jsx": "react"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "coverage", "__tests__"],
+  "include": ["src/"],
+  "exclude": ["node_modules", "dist", "build"],
   "ts-node": {
     "transpileOnly": true
   }
