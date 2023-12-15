@@ -25,8 +25,10 @@
   "dependencies": {
     "@json2csv/plainjs": "^7.0.4",
     "babel-jest": "^29.7.0",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "file-loader": "^6.2.0",
-    "payload": "^2.0.0"
+    "payload": "^2.0.0",
+    "react-jss": "^10.10.0"
   },
   "devDependencies": {
     "@types/jest": "29.5.11",

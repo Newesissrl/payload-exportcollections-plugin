@@ -3,9 +3,24 @@ import { Button } from "payload/components/elements";
 import { useTranslation } from "react-i18next";
 
 import React, { useState, useEffect } from "react";
-import "./index.scss";
 import { useConfig } from "payload/components/utilities";
-
+import { createUseStyles } from "react-jss";
+const useStyles = createUseStyles({
+  buttons: {
+    display: "flex",
+    justifyContent: "flex-end",
+    "& button": {
+      // jss-plugin-nested applies this to a child span
+      margin: "0 8px",
+      "&:last-of-type": {
+        marginRight: 0,
+      },
+    },
+    "& .hidden": {
+      display: "none",
+    },
+  },
+});
 const ExportTypes = {
   JSON: "json",
   CSV: "csv",
@@ -14,6 +29,7 @@ const DownloadExportFile = ({ slug, type, fileName }) => {
   const {
     routes: { api },
   } = useConfig();
+
   return (
     <a
       className="hidden"
@@ -26,6 +42,7 @@ const DownloadExportFile = ({ slug, type, fileName }) => {
   );
 };
 export const ExportListButtons = ({ collection }) => {
+  const classes = useStyles();
   const { t } = useTranslation("general");
   const [fileNameCSV, setFileNameCSV] = useState(null);
   const [fileNameJSON, setFileNameJSON] = useState(null);
@@ -82,7 +99,7 @@ export const ExportListButtons = ({ collection }) => {
   });
   return (
     userInfo && (
-      <div className="buttons">
+      <div className={classes.buttons}>
         {fileNameCSV && (
           <DownloadExportFile fileName={fileNameCSV} slug={slug} type={"csv"} />
         )}
