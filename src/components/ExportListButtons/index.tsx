@@ -1,7 +1,5 @@
 import { Button } from "payload/components/elements";
-
 import { useTranslation } from "react-i18next";
-
 import React, { useState, useEffect } from "react";
 import { useConfig } from "payload/components/utilities";
 import { createUseStyles } from "react-jss";
@@ -10,7 +8,6 @@ const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "flex-end",
     "& button": {
-      // jss-plugin-nested applies this to a child span
       margin: "0 8px",
       "&:last-of-type": {
         marginRight: 0,
@@ -41,18 +38,31 @@ const DownloadExportFile = ({ slug, type, fileName }) => {
     </a>
   );
 };
+const ExportButton = ({ onClick, type, disabled }) => {
+  const { t } = useTranslation("general");
+  return (
+    <Button type="submit" onClick={() => onClick(type)} disabled={disabled}>
+      {t(`export-list-${type}`)}
+    </Button>
+  );
+};
 export const ExportListButtons = ({ collection }) => {
   const classes = useStyles();
-  const { t } = useTranslation("general");
   const [fileNameCSV, setFileNameCSV] = useState(null);
   const [fileNameJSON, setFileNameJSON] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
+  const [isExporting, setIsExporting] = useState(false);
   const { slug } = collection;
+  const config = useConfig();
+  if (!(config && config.serverURL)) {
+    return null;
+  }
   const {
     routes: { api },
     serverURL,
-  } = useConfig();
+  } = config;
   const save = async (exportType) => {
+    setIsExporting(true);
     let hasItems = true;
     let result = [];
     while (hasItems) {
@@ -70,6 +80,7 @@ export const ExportListButtons = ({ collection }) => {
         headers: { "Content-Type": "application/json" },
       }
     ).then((res) => res.text());
+    setIsExporting(false);
     if (exportType === ExportTypes.CSV) {
       setFileNameCSV(filePath);
       return;
@@ -96,16 +107,18 @@ export const ExportListButtons = ({ collection }) => {
       setUserInfo(userData.user);
     };
     getUserInfo();
-  });
+  }, [serverURL, api, setUserInfo]);
   return (
     userInfo && (
       <div className={classes.buttons}>
         {fileNameCSV && (
           <DownloadExportFile fileName={fileNameCSV} slug={slug} type={"csv"} />
         )}
-        <Button type="submit" onClick={() => save(ExportTypes.CSV)}>
-          {t("export-list-csv")}
-        </Button>
+        <ExportButton
+          type={ExportTypes.CSV}
+          onClick={save}
+          disabled={isExporting}
+        />
         {fileNameJSON && (
           <DownloadExportFile
             fileName={fileNameJSON}
@@ -113,9 +126,11 @@ export const ExportListButtons = ({ collection }) => {
             type={"json"}
           />
         )}
-        <Button type="submit" onClick={() => save(ExportTypes.JSON)}>
-          {t("export-list-json")}
-        </Button>
+        <ExportButton
+          type={ExportTypes.JSON}
+          onClick={save}
+          disabled={isExporting}
+        />
       </div>
     )
   );
