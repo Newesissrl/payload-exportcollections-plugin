@@ -1,4 +1,5 @@
 import { Config } from "payload/config";
+import path from "path";
 import { ExportCollectionsPluginConfig } from "../types";
 import { FSUtils } from "../utils/FSUtils";
 import { ExportListButtons } from "../components/ExportListButtons";
@@ -9,6 +10,7 @@ export const exportCollectionsPlugin = (
 ) => {
   return (incomingConfig: Config): Config => {
     const disabledCollections = pluginConfig?.disabledCollections || [];
+    const exportsRootDir = pluginConfig?.rootDir || ".";
     const config: Config = {
       ...incomingConfig,
       collections: (incomingConfig.collections || []).map((collection) => {
@@ -28,11 +30,14 @@ export const exportCollectionsPlugin = (
             {
               method: "post",
               path: "/save-exports",
-              handler: async function (req, res) {
+              handler: function (req, res) {
                 const { type, slug, id } = req.query;
                 const { data } = req.body;
                 const fsUtils = new FSUtils();
-                fsUtils.EmptyFolder(`${id}/${type}`, "exports");
+                fsUtils.EmptyFolder(
+                  `${id}/${type}`,
+                  `${exportsRootDir}/exports`
+                );
                 const parser = new Parser({
                   formatters: {
                     boolean: (item: any) => {
@@ -53,7 +58,7 @@ export const exportCollectionsPlugin = (
                   `${id}/${type}`,
                   `exports-${slug}-${Date.now()}.${type}`,
                   type == "json" ? JSON.stringify(data) : parser.parse(data),
-                  "exports"
+                  `${exportsRootDir}/exports`
                 );
                 res.send(filePath);
               },
@@ -61,7 +66,7 @@ export const exportCollectionsPlugin = (
             {
               method: "get",
               path: "/download-exports",
-              handler: async function (req, res) {
+              handler: function (req, res) {
                 const { filePath } = req.query;
                 res.download(filePath.toString());
               },

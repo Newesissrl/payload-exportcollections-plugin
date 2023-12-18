@@ -2,9 +2,8 @@ import path from "path";
 import fs from "fs";
 import { LoadResult } from "../types";
 export class FSUtils {
-  constructor() {}
   GetBaseDir(dirName: string = "out"): string {
-    return path.join(__dirname, "../../", dirName);
+    return path.join(process.cwd(), dirName);
   }
   GetBaseDirByType(type: string, rootDir?: string): LoadResult {
     const baseDir = path.join(this.GetBaseDir(rootDir), type);
@@ -32,7 +31,7 @@ export class FSUtils {
     if (!baseDir.result) {
       return;
     }
-    fs.rmdirSync(baseDir.strData, {
+    fs.rmSync(baseDir.strData, {
       recursive: true,
     });
   };

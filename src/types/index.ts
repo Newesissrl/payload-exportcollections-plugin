@@ -7,4 +7,5 @@ export type LoadResult = {
 
 export type ExportCollectionsPluginConfig = {
   disabledCollections?: string[];
+  rootDir?: string;
 };

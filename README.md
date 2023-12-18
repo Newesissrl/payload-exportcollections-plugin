@@ -11,7 +11,7 @@ Extends `payloadcms` with the ability to export all collection's data to CSV or 
 ### payload.config.ts
 
 ```js
-import { exportCollectionsPlugin } from "@newesissrl/payload-exportcollections-plugin/dist/plugins";
+import { exportCollectionsPlugin } from "@newesissrl/payload-exportcollections-plugin";
 
 export default buildConfig({
     ....
@@ -42,7 +42,10 @@ The plugin may expects a `config` object defined like this:
 ```js
 export type ExportCollectionsPluginConfig = {
   disabledCollections?: string[];
+  rootDir?: string;
 };
 ```
 
-where `disabledCollections` is a list of collections' slugs that you want to exclude from the plugin's enrichment.
+where:
+- `disabledCollections` is a list of collections' slugs that you want to exclude from the plugin's enrichment.
+- `rootDir` is the directory where to temporarily store the exported files
