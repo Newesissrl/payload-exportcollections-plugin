@@ -1,11 +1,11 @@
 {
-  "name": "payload-exportcollections-plugin",
+  "name": "@newesissrl/payload-exportcollections-plugin",
   "version": "0.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/finkinfridom/payload-exportcollections-plugin.git",
-  "author": "Alberto Maghini <alberto@newesis.com>",
-  "license": "MIT",
+  "repository": "https://github.com/Newesissrl/payload-exportcollections-plugin.git",
+  "author": "Newesis Srl",
+  "license": "Apache-2.0",
   "files": [
     "dist"
   ],
