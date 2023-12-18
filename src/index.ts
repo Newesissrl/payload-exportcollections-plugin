@@ -1,3 +1,3 @@
 import { LoadResult, ExportCollectionsPluginConfig } from "./types";
-
-export { LoadResult, ExportCollectionsPluginConfig };
+import exportCollectionsPlugin from "./plugins";
+export { LoadResult, ExportCollectionsPluginConfig, exportCollectionsPlugin };
