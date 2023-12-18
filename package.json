@@ -7,7 +7,11 @@
   "author": "Newesis Srl",
   "license": "Apache-2.0",
   "files": [
-    "dist"
+    "dist",
+    "LICENSE",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "README.md"
   ],
   "scripts": {
     "clean": "npx yarn-deduplicate yarn.lock",
@@ -51,5 +55,8 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
