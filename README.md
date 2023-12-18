@@ -11,11 +11,28 @@ Extends `payloadcms` with the ability to export all collection's data to CSV or 
 ### payload.config.ts
 
 ```js
-import exportCollectionsPlugin from "@newesissrl/payload-exportcollections-plugin";
+import { exportCollectionsPlugin } from "@newesissrl/payload-exportcollections-plugin/dist/plugins";
 
 export default buildConfig({
     ....
-    plugins: [exportCollectionsPlugin(config?)]
+    plugins: [exportCollectionsPlugin(config?)],
+    i18n: {
+      resources: {
+        // to localize the buttons' labels
+        en: {
+          general: {
+            "export-list-csv": "Export list (CSV)",
+            "export-list-json": "Export list (JSON)",
+          },
+        },
+        it: {
+          general: {
+            "export-list-csv": "Esporta lista (CSV)",
+            "export-list-json": "Esporta lista (JSON)",
+          },
+        },
+      },
+    }
     ....
 })
 ```

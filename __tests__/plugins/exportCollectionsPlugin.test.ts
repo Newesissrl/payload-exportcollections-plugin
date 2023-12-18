@@ -1,5 +1,4 @@
-import { PayloadRequest } from "payload/types";
-import exportCollectionsPlugin from "../src/plugins";
+import { exportCollectionsPlugin } from "../../src";
 import { Config, Plugin } from "payload/config";
 
 describe("exportCollectionsPlugin", () => {
