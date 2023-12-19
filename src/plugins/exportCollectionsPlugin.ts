@@ -2,7 +2,7 @@ import { Config } from "payload/config";
 import { ExportCollectionsPluginConfig } from "../types";
 import { FSUtils } from "../utils/FSUtils";
 import { ExportListButtons } from "../components/ExportListButtons";
-import { Parser } from "@json2csv/plainjs";
+import { json2csv } from "json-2-csv";
 import { PayloadRequest } from "payload/dist/types";
 
 export const exportCollectionsPlugin = (
@@ -49,28 +49,11 @@ export const exportCollectionsPlugin = (
                   `${id}/${type}`,
                   `${exportsRootDir}/exports`
                 );
-                const parser = new Parser({
-                  formatters: {
-                    boolean: (item: any) => {
-                      return item ? "0" : "1";
-                    },
-                    object: (item: any) => {
-                      if (!item) {
-                        return "";
-                      }
-                      if (Array.isArray(item)) {
-                        item = item.join("|");
-                      }
-                      return JSON.stringify(item);
-                    },
-                  },
-                });
+
                 const filePath = fsUtils.SaveToFolder(
                   `${id}/${type}`,
                   `exports-${slug}-${Date.now()}.${type}`,
-                  type == "json"
-                    ? JSON.stringify(results)
-                    : parser.parse(results),
+                  type == "json" ? JSON.stringify(results) : json2csv(results),
                   `${exportsRootDir}/exports`
                 );
                 res.send(filePath);

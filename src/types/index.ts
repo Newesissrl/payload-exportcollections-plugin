@@ -9,3 +9,7 @@ export type ExportCollectionsPluginConfig = {
   disabledCollections?: string[];
   rootDir?: string;
 };
+
+export type JsonToCsvParserOptions = {
+  delimiter?: string;
+};
