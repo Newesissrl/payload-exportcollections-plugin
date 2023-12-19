@@ -54,9 +54,6 @@ export const ExportListButtons = ({ collection }) => {
   const [isExporting, setIsExporting] = useState(false);
   const { slug } = collection;
   const config = useConfig();
-  if (!(config && config.serverURL)) {
-    return null;
-  }
   const {
     routes: { api },
     serverURL,

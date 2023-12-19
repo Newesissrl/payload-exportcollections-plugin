@@ -23,8 +23,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "serve:cov": "serve coverage -c ../serve.json",
-    "lint": "eslint . --ext .ts",
-    "push:cov": "yarn test && docker run -v $PWD:/code codacy/codacy-coverage-reporter report --coverage-reports /code/coverage/lcov.info"
+    "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "@json2csv/plainjs": "^7.0.4",
@@ -36,8 +35,8 @@
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "payload": "^2.0.0",
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",

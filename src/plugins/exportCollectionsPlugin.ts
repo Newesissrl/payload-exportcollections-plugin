@@ -1,5 +1,4 @@
 import { Config } from "payload/config";
-import path from "path";
 import { ExportCollectionsPluginConfig } from "../types";
 import { FSUtils } from "../utils/FSUtils";
 import { ExportListButtons } from "../components/ExportListButtons";
