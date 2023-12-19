@@ -26,10 +26,10 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "@json2csv/plainjs": "^7.0.4",
     "babel-jest": "^29.7.0",
     "css-minimizer-webpack-plugin": "^5.0.1",
     "file-loader": "^6.2.0",
+    "json-2-csv": "^5.0.1",
     "payload": "^2.0.0",
     "react-jss": "^10.10.0"
   },

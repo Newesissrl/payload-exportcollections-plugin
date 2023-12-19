@@ -849,19 +849,6 @@
   resolved "https://registry.yarnpkg.com/@jsdevtools/ono/-/ono-7.1.3.tgz#9df03bbd7c696a5c58885c34aa06da41c8543796"
   integrity sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==
 
-"@json2csv/formatters@^7.0.4":
-  version "7.0.4"
-  resolved "https://registry.npmjs.org/@json2csv/formatters/-/formatters-7.0.4.tgz"
-  integrity sha512-qdlLx0Pk/+BQnu6zreLgGrdLyUzLNVdsyCUU/+2aduHg4zemVo/e0iWjPk1sy/QZXXh+1RXBe+IiP9eDyj95qg==
-
-"@json2csv/plainjs@^7.0.4":
-  version "7.0.4"
-  resolved "https://registry.npmjs.org/@json2csv/plainjs/-/plainjs-7.0.4.tgz"
-  integrity sha512-IHLyosebSdXMtVKusHHGqvp8mCpEkVk0Qvc0lAGcdAYdvO8lBvry8o665+CX78uPj/QZBhu+s0cOWyxanxlrQw==
-  dependencies:
-    "@json2csv/formatters" "^7.0.4"
-    "@streamparser/json" "^0.0.17"
-
 "@monaco-editor/loader@^1.3.3":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@monaco-editor/loader/-/loader-1.4.0.tgz#f08227057331ec890fa1e903912a5b711a2ad558"
@@ -937,11 +924,6 @@
   integrity sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==
   dependencies:
     "@sinonjs/commons" "^3.0.0"
-
-"@streamparser/json@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.npmjs.org/@streamparser/json/-/json-0.0.17.tgz"
-  integrity sha512-mW54K6CTVJVLwXRB6kSS1xGWPmtTuXAStWnlvtesmcySgtop+eFPWOywBFPpJO4UD173epYsPSP6HSW8kuqN8w==
 
 "@swc/core-darwin-arm64@1.3.76":
   version "1.3.76"
@@ -2578,6 +2560,11 @@ dedent@^1.0.0:
   resolved "https://registry.npmjs.org/dedent/-/dedent-1.5.1.tgz"
   integrity sha512-+LxW+KLWxu3HW3M2w2ympwtqPrqYRzU8fqi6Fhd18fBALe15blJPI/I4+UHveMVG6lJqB4JNd4UG0S5cnVHwIg==
 
+deeks@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/deeks/-/deeks-3.0.2.tgz#49d908fb2b797554a139aede17176b11679eb89f"
+  integrity sha512-c6OmjIygIB/avwXwEQOiODS+nw6fEX4cvOdDMqdL7dt3dicV/xykAJ9AeVc/8/JTVQDuacjRc9KCMmXafL1Y4A==
+
 deep-equal@2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-2.2.2.tgz#9b2635da569a13ba8e1cc159c2f744071b115daa"
@@ -2676,6 +2663,11 @@ dir-glob@^3.0.1:
   integrity sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
   dependencies:
     path-type "^4.0.0"
+
+doc-path@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/doc-path/-/doc-path-4.0.2.tgz#157ddd33b86282bdf58cf4b9979bf9483cf9a95f"
+  integrity sha512-OqZEk7EM1aP3JpO+mq0pv1msEJWrzZVXu4q3YjEYJKc+Wt3/chac4KJdaGueK5IGemOwfptrLctG9I8xkb59qQ==
 
 doctrine@^3.0.0:
   version "3.0.0"
@@ -4553,6 +4545,14 @@ jsesc@^2.5.1:
   version "2.5.2"
   resolved "https://registry.npmjs.org/jsesc/-/jsesc-2.5.2.tgz"
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
+
+json-2-csv@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/json-2-csv/-/json-2-csv-5.0.1.tgz#ffbdd597cfdcfa7ec805a039cbdba752dc3d8af4"
+  integrity sha512-rP9ChyMskS0angbvFdQ43SwEe72mEvqcY1/V2OeukQWxtlreUuZWhMlTdWjtd4L6kJxq+HPFTI06yqLvZiEVIA==
+  dependencies:
+    deeks "3.0.2"
+    doc-path "4.0.2"
 
 json-buffer@3.0.1:
   version "3.0.1"
