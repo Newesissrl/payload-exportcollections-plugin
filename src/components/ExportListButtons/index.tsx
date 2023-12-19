@@ -60,21 +60,11 @@ export const ExportListButtons = ({ collection }) => {
   } = config;
   const save = async (exportType) => {
     setIsExporting(true);
-    let hasItems = true;
-    let result = [];
-    while (hasItems) {
-      const data = await fetch(`${serverURL}${api}/${slug}?limit=100`).then(
-        (res) => res.json()
-      );
-      hasItems = data.hasNextPage;
-      result = result.concat(data.docs);
-    }
+
     const filePath = await fetch(
       `${serverURL}${api}/${slug}/save-exports?id=${userInfo.id}&type=${exportType}&slug=${slug}`,
       {
-        method: "POST",
-        body: JSON.stringify({ data: result }),
-        headers: { "Content-Type": "application/json" },
+        method: "GET",
       }
     ).then((res) => res.text());
     setIsExporting(false);
