@@ -5576,10 +5576,10 @@ pause@0.0.1:
   resolved "https://registry.yarnpkg.com/pause/-/pause-0.0.1.tgz#1d408b3fdb76923b9543d96fb4c9dfd535d9cb5d"
   integrity sha512-KG8UEiEVkR3wGEb4m5yZkVCzigAD+cVEJck2CzYZO37ZGJfctvVptVO192MwrtPhzONn6go8ylnOdMhKqi4nfg==
 
-payload@^2.0.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/payload/-/payload-2.4.0.tgz#bb443560bccee7ea5e0695eb360b8520e4af62b8"
-  integrity sha512-o4TYlJvSYopgmX6S9TF0rcKj6A4Mv9Phhxw0fkWMb414Iz41SqqGMhHNTVVYpXuZ66mmZigTA6SoT6C1cTwcMw==
+payload@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/payload/-/payload-2.5.0.tgz#42bf5bf3165bfc73373b9ac046b990303f5da4d4"
+  integrity sha512-OQRpRsQJhrQZ9EKsTCpcL9a9rxpNIEj2CvCDn8QEozx+rD0cUZmOmwIeK5HilXVqvjO9v70kllO5Jtr8QNMjSA==
   dependencies:
     "@date-io/date-fns" "2.16.0"
     "@dnd-kit/core" "6.0.8"
