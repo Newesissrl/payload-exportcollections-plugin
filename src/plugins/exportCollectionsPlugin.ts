@@ -22,7 +22,7 @@ export const exportCollectionsPlugin = (
           admin: {
             ...collection.admin,
             components: {
-              ...collection.admin.components,
+              ...collection.admin?.components,
               BeforeListTable: [ExportListButtons],
             },
           },
