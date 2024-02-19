@@ -5094,11 +5094,6 @@ methods@~1.1.2:
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==
 
-micro-memoize@4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/micro-memoize/-/micro-memoize-4.1.2.tgz#ce719c1ba1e41592f1cd91c64c5f41dcbf135f36"
-  integrity sha512-+HzcV2H+rbSJzApgkj0NdTakkC+bnyeiUxgT6/m7mjcz1CmM22KYFKp+EVj1sWe4UYcnriJr5uqHQD/gMHLD+g==
-
 micromatch@^4.0.4:
   version "4.0.5"
   resolved "https://registry.npmjs.org/micromatch/-/micromatch-4.0.5.tgz"
@@ -5603,10 +5598,10 @@ pause@0.0.1:
   resolved "https://registry.yarnpkg.com/pause/-/pause-0.0.1.tgz#1d408b3fdb76923b9543d96fb4c9dfd535d9cb5d"
   integrity sha512-KG8UEiEVkR3wGEb4m5yZkVCzigAD+cVEJck2CzYZO37ZGJfctvVptVO192MwrtPhzONn6go8ylnOdMhKqi4nfg==
 
-payload@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/payload/-/payload-2.11.0.tgz#833721625ec62051f53022dd5ede88c850499da3"
-  integrity sha512-FLFgwJlGGYMEeCjc23B31iAUh0Tq+uTR3TEzLMITdcE4Aw/j7qm5758XRK9FAzOcE7WOHFE7DopnPU+9/k6k3A==
+payload@^2.11.1:
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/payload/-/payload-2.11.1.tgz#69075b5797614755e38ff434021544106e07fa51"
+  integrity sha512-uaPSUbmTpYbRAhewjrr8psRKDwbE1KWYJvg21Qxf5iDBzLe3D401SIE1erAQwIv5zeHA6RgLB7YjN8p+qzVTPA==
   dependencies:
     "@date-io/date-fns" "2.16.0"
     "@dnd-kit/core" "6.0.8"
@@ -5657,7 +5652,6 @@ payload@^2.11.0:
     jwt-decode "3.1.2"
     md5 "2.3.0"
     method-override "3.0.0"
-    micro-memoize "4.1.2"
     minimist "1.2.8"
     mkdirp "1.0.4"
     monaco-editor "0.38.0"
