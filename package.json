@@ -28,7 +28,7 @@
   "dependencies": {
     "babel-jest": "^29.7.0",
     "file-loader": "^6.2.0",
-    "json-2-csv": "^5.0.1",
+    "json-2-csv": "^5.1.0",
     "payload": "^2.11.1",
     "react-jss": "^10.10.0"
   },
