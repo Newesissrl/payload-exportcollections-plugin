@@ -5609,10 +5609,10 @@ pause@0.0.1:
   resolved "https://registry.yarnpkg.com/pause/-/pause-0.0.1.tgz#1d408b3fdb76923b9543d96fb4c9dfd535d9cb5d"
   integrity sha512-KG8UEiEVkR3wGEb4m5yZkVCzigAD+cVEJck2CzYZO37ZGJfctvVptVO192MwrtPhzONn6go8ylnOdMhKqi4nfg==
 
-payload@^2.11.2:
-  version "2.11.2"
-  resolved "https://registry.yarnpkg.com/payload/-/payload-2.11.2.tgz#d774a4736d6a5ab0fea4d4c555dd825ce534c1e2"
-  integrity sha512-UaruSsw7nFOzLurBjPWIHiDzGuTIGEK5UrEEfHagJnYe6xUP3/cg44qD+RQNb5D1FkV7x/B+ha8Ci7YVdz9eAA==
+payload@^2.12.1:
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/payload/-/payload-2.12.1.tgz#5d02981ff8ae0631114cb5b2dc29b92ee65ac0a0"
+  integrity sha512-7RaOfCMM56coFMZW6DsN7bWdB7VdekphzMMmiyFvOEs5GWxvzES3rFjAYqP0udRTA2w1Vmh6vYsI8nfLgn8DAQ==
   dependencies:
     "@date-io/date-fns" "2.16.0"
     "@dnd-kit/core" "6.0.8"
@@ -7393,10 +7393,10 @@ type@^2.7.2:
   resolved "https://registry.yarnpkg.com/type/-/type-2.7.2.tgz#2376a15a3a28b1efa0f5350dcf72d24df6ef98d0"
   integrity sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==
 
-typescript@5.4.3:
-  version "5.4.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.3.tgz#5c6fedd4c87bee01cd7a528a30145521f8e0feff"
-  integrity sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==
+typescript@5.4.4:
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.4.tgz#eb2471e7b0a5f1377523700a21669dce30c2d952"
+  integrity sha512-dGE2Vv8cpVvw28v8HCPqyb08EzbBURxDpuhJvTrusShUfGnhHBafDsLdS1EhhxyL6BJQE+2cT3dDPAv+MQ6oLw==
 
 undici-types@~5.26.4:
   version "5.26.5"
