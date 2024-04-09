@@ -3,6 +3,9 @@ import { useTranslation } from "react-i18next";
 import React, { useState, useEffect } from "react";
 import { useConfig } from "payload/components/utilities";
 import { createUseStyles } from "react-jss";
+import { useSearchParams } from "payload/dist/admin/components/utilities/SearchParams";
+import qs from "qs";
+
 const useStyles = createUseStyles({
   buttons: {
     display: "flex",
@@ -47,6 +50,7 @@ const ExportButton = ({ onClick, type, disabled }) => {
   );
 };
 export const ExportListButtons = ({ collection }) => {
+  const params = useSearchParams();
   const classes = useStyles();
   const [fileNameCSV, setFileNameCSV] = useState(null);
   const [fileNameJSON, setFileNameJSON] = useState(null);
@@ -63,9 +67,14 @@ export const ExportListButtons = ({ collection }) => {
   } = config;
   const save = async (exportType) => {
     setIsExporting(true);
-
+    const query = qs.stringify({
+      ...params,
+      id: userInfo.id,
+      type: exportType,
+      slug,
+    });
     const filePath = await fetch(
-      `${serverURL}${api}/${slug}/save-exports?id=${userInfo.id}&type=${exportType}&slug=${slug}`,
+      `${serverURL}${api}/${slug}/save-exports?${query}`,
       {
         method: "GET",
       }
