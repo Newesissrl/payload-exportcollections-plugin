@@ -8,6 +8,11 @@ export type LoadResult = {
 export type ExportCollectionsPluginConfig = {
   disabledCollections?: string[];
   rootDir?: string;
+  componentPlacement?:
+    | "AfterList"
+    | "AfterListTable"
+    | "BeforeList"
+    | "BeforeListTable";
 };
 
 export type JsonToCsvParserOptions = {
