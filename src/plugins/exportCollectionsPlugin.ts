@@ -11,6 +11,8 @@ export const exportCollectionsPlugin = (
   return (incomingConfig: Config): Config => {
     const disabledCollections = pluginConfig?.disabledCollections || [];
     const exportsRootDir = pluginConfig?.rootDir || ".";
+    const componentPlacement =
+      pluginConfig?.componentPlacement || "BeforeListTable";
     const config: Config = {
       ...incomingConfig,
       collections: (incomingConfig.collections || []).map((collection) => {
@@ -23,7 +25,7 @@ export const exportCollectionsPlugin = (
             ...collection.admin,
             components: {
               ...collection.admin?.components,
-              BeforeListTable: [ExportListButtons],
+              [componentPlacement]: [ExportListButtons],
             },
           },
           endpoints: (collection.endpoints || []).concat([
