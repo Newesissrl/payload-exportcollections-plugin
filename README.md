@@ -43,12 +43,18 @@ The plugin may expects a `config` object defined like this:
 export type ExportCollectionsPluginConfig = {
   disabledCollections?: string[];
   rootDir?: string;
+  componentPlacement?:
+    | "AfterList"
+    | "AfterListTable"
+    | "BeforeList"
+    | "BeforeListTable";
 };
 ```
 
 where:
 - `disabledCollections` is a list of collections' slugs that you want to exclude from the plugin's enrichment.
 - `rootDir` is the directory where to temporarily store the exported files
+- `componentPlacement` identify where to place the component
 
 
 
