@@ -1,3 +1,5 @@
+import { Json2CsvOptions } from "json-2-csv";
+
 export type LoadResult = {
   result: boolean;
   cause?: string;
@@ -8,6 +10,8 @@ export type LoadResult = {
 export type ExportCollectionsPluginConfig = {
   disabledCollections?: string[];
   rootDir?: string;
+  jsonReplacer?: (key: string, value: any) => any;
+  csvOptions?: Json2CsvOptions;
   componentPlacement?:
     | "AfterList"
     | "AfterListTable"

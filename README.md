@@ -43,6 +43,8 @@ The plugin may expects a `config` object defined like this:
 export type ExportCollectionsPluginConfig = {
   disabledCollections?: string[];
   rootDir?: string;
+  jsonReplacer?: (key: string, value: any) => any;
+  csvOptions?: Json2CsvOptions;
   componentPlacement?:
     | "AfterList"
     | "AfterListTable"
@@ -55,6 +57,8 @@ where:
 - `disabledCollections` is a list of collections' slugs that you want to exclude from the plugin's enrichment.
 - `rootDir` is the directory where to temporarily store the exported files
 - `componentPlacement` identify where to place the component
+- `jsonReplacer` is a function useful to replace fields (and/or omit them in the final result). see [here](https://dillionmegida.com/p/second-argument-in-json-stringify/#function-replacers)
+- `csvOptions` is the same implementation as per the core [json-2-csv](https://www.npmjs.com/package/json-2-csv) package. see [here](https://mrodrig.github.io/json-2-csv/)
 
 
 
