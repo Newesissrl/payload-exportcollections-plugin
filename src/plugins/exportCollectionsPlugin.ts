@@ -1,9 +1,9 @@
-import { Config } from "payload/config";
-import { ExportCollectionsPluginConfig } from "../types";
+import type { Config } from "payload/config";
+import type { ExportCollectionsPluginConfig } from "../types";
 import { FSUtils } from "../utils/FSUtils";
 import { ExportListButtons } from "../components/ExportListButtons";
 import { json2csv } from "json-2-csv";
-import { PayloadRequest } from "payload/dist/types";
+import type { PayloadRequest } from "payload/types";
 import qs from "qs";
 
 export const exportCollectionsPlugin = (

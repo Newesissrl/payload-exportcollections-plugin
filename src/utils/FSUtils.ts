@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-import { LoadResult } from "../types";
+import type { LoadResult } from "../types";
 export class FSUtils {
   GetBaseDir(dirName: string = "out"): string {
     return path.join(process.cwd(), dirName);
