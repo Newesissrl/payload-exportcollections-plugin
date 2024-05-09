@@ -1,4 +1,4 @@
-import { Json2CsvOptions } from "json-2-csv";
+import type { Json2CsvOptions } from "json-2-csv";
 
 export type LoadResult = {
   result: boolean;

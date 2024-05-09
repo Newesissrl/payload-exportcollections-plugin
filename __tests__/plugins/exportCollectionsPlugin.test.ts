@@ -1,5 +1,5 @@
 import { exportCollectionsPlugin } from "../../src";
-import { Config, Plugin } from "payload/config";
+import type { Config, Plugin } from "payload/config";
 
 describe("exportCollectionsPlugin", () => {
   let plugin: Plugin;
