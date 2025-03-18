@@ -1,9 +1,7 @@
-import { Button } from "payload/components/elements";
-import { useTranslation } from "react-i18next";
+import { useConfig, useTranslation, Button } from "@payloadcms/ui";
 import React, { useState, useEffect } from "react";
-import { useConfig } from "payload/components/utilities";
 import { createUseStyles } from "react-jss";
-import { useSearchParams } from "payload/dist/admin/components/utilities/SearchParams";
+import { useSearchParams } from "next/navigation";
 import qs from "qs";
 
 const useStyles = createUseStyles({
@@ -27,7 +25,9 @@ const ExportTypes = {
 };
 const DownloadExportFile = ({ slug, type, fileName }) => {
   const {
-    routes: { api },
+    config: {
+      routes: { api },
+    },
   } = useConfig();
 
   return (
@@ -41,11 +41,19 @@ const DownloadExportFile = ({ slug, type, fileName }) => {
     </a>
   );
 };
-const ExportButton = ({ onClick, type, disabled }) => {
-  const { t } = useTranslation("general");
+const ExportButton = ({
+  onClick,
+  type,
+  disabled,
+}: {
+  onClick: any;
+  type: string;
+  disabled: boolean;
+}) => {
+  const { t } = useTranslation();
   return (
     <Button type="submit" onClick={() => onClick(type)} disabled={disabled}>
-      {t(`export-list-${type}`)}
+      {`Export as ${type}`}
     </Button>
   );
 };
@@ -57,7 +65,7 @@ export const ExportListButtons = ({ collection }) => {
   const [userInfo, setUserInfo] = useState(null);
   const [isExporting, setIsExporting] = useState(false);
   const { slug } = collection;
-  const config = useConfig();
+  const { config } = useConfig();
   if (!(config && config.serverURL)) {
     return null;
   }
