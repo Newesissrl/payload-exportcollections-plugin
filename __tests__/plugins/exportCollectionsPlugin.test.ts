@@ -1,5 +1,5 @@
+import type { Config, Plugin } from "mzinga/config";
 import { exportCollectionsPlugin } from "../../src";
-import type { Config, Plugin } from "payload/config";
 
 describe("exportCollectionsPlugin", () => {
   let plugin: Plugin;

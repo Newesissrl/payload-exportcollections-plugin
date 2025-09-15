@@ -1,14 +1,14 @@
 # payload-exportcollections-plugin
 
-Extends `payloadcms` with the ability to export all collection's data to CSV or JSON
+Extends `mzinga` with the ability to export all collection's data to CSV or JSON
 
 ## Install
 
-`yarn add @newesissrl/payload-exportcollections-plugin`
+`npm install @newesissrl/payload-exportcollections-plugin`
 
 ## Get Started
 
-### payload.config.ts
+### mzinga.config.ts
 
 ```js
 import { exportCollectionsPlugin } from "@newesissrl/payload-exportcollections-plugin";
@@ -54,13 +54,12 @@ export type ExportCollectionsPluginConfig = {
 ```
 
 where:
+
 - `disabledCollections` is a list of collections' slugs that you want to exclude from the plugin's enrichment.
 - `rootDir` is the directory where to temporarily store the exported files
 - `componentPlacement` identify where to place the component
 - `jsonReplacer` is a function useful to replace fields (and/or omit them in the final result). see [here](https://dillionmegida.com/p/second-argument-in-json-stringify/#function-replacers)
 - `csvOptions` is the same implementation as per the core [json-2-csv](https://www.npmjs.com/package/json-2-csv) package. see [here](https://mrodrig.github.io/json-2-csv/)
-
-
 
 ## Notes
 
@@ -76,7 +75,7 @@ export default buildConfig({
           ...config.resolve,
           alias: {
             ...config.resolve.alias,
-            payload: path.resolve("./node_modules/payload"), // this will fix the components usage of `useConfig` hook
+            payload: path.resolve("./node_modules/mzinga"), // this will fix the components usage of `useConfig` hook
           }
         }
       }
