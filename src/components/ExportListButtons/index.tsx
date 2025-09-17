@@ -1,10 +1,10 @@
-import { Button } from "payload/components/elements";
-import { useTranslation } from "react-i18next";
-import React, { useState, useEffect } from "react";
-import { useConfig } from "payload/components/utilities";
-import { createUseStyles } from "react-jss";
-import { useSearchParams } from "payload/dist/admin/components/utilities/SearchParams";
+import { Button } from "mzinga/components/elements";
+import { useConfig } from "mzinga/components/utilities";
+import { useSearchParams } from "mzinga/dist/admin/components/utilities/SearchParams";
 import qs from "qs";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
   buttons: {
@@ -44,7 +44,12 @@ const DownloadExportFile = ({ slug, type, fileName }) => {
 const ExportButton = ({ onClick, type, disabled }) => {
   const { t } = useTranslation("general");
   return (
-    <Button type="submit" onClick={() => onClick(type)} disabled={disabled}>
+    <Button
+      type="submit"
+      onClick={() => onClick(type)}
+      disabled={disabled}
+      data-testid={`export-list-${type}`}
+    >
       {t(`export-list-${type}`)}
     </Button>
   );

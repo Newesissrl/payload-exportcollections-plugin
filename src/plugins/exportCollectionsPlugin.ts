@@ -1,10 +1,10 @@
-import type { Config } from "payload/config";
+import { json2csv } from "json-2-csv";
+import type { Config } from "mzinga/config";
+import type { PayloadRequest } from "mzinga/types";
+import qs from "qs";
+import { ExportListButtons } from "../components/ExportListButtons";
 import type { ExportCollectionsPluginConfig } from "../types";
 import { FSUtils } from "../utils/FSUtils";
-import { ExportListButtons } from "../components/ExportListButtons";
-import { json2csv } from "json-2-csv";
-import type { PayloadRequest } from "payload/types";
-import qs from "qs";
 
 export const exportCollectionsPlugin = (
   pluginConfig?: ExportCollectionsPluginConfig
