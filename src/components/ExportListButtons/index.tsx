@@ -44,7 +44,12 @@ const DownloadExportFile = ({ slug, type, fileName }) => {
 const ExportButton = ({ onClick, type, disabled }) => {
   const { t } = useTranslation("general");
   return (
-    <Button type="submit" onClick={() => onClick(type)} disabled={disabled}>
+    <Button
+      type="submit"
+      onClick={() => onClick(type)}
+      disabled={disabled}
+      data-testid={`export-list-${type}`}
+    >
       {t(`export-list-${type}`)}
     </Button>
   );
