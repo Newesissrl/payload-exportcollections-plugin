@@ -27,12 +27,11 @@
   "dependencies": {
     "file-loader": "^6.2.0",
     "json-2-csv": "^5.5.7",
-    "mzinga": "0.0.7",
+    "mzinga": "^0.0.8",
     "react-jss": "^10.10.0"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.11.1",
-    "mzinga": "0.0.7"
+    "@emotion/react": "^11.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
