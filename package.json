@@ -27,7 +27,7 @@
   "dependencies": {
     "file-loader": "^6.2.0",
     "json-2-csv": "^5.5.7",
-    "mzinga": "^0.0.8",
+    "mzinga": "^0.1.0",
     "react-jss": "^10.10.0"
   },
   "peerDependencies": {
