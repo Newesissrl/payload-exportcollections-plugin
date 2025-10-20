@@ -92,6 +92,7 @@ export default {
   // moduleNameMapper: {},
   moduleNameMapper: {
     "^.+\\.(css|less|scss)$": "babel-jest",
+    "^mzinga(.*)$": "<rootDir>/node_modules/mzinga$1",
   },
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
