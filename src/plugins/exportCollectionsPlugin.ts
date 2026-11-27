@@ -1,6 +1,6 @@
 import { json2csv } from "json-2-csv";
 import type { Config } from "mzinga/config";
-import type { PayloadRequest } from "mzinga/types";
+import type { PayloadRequest, Where } from "mzinga/types";
 import qs from "qs";
 import { ExportListButtons } from "../components/ExportListButtons";
 import type { ExportCollectionsPluginConfig } from "../types";
@@ -42,10 +42,10 @@ export const exportCollectionsPlugin = (
                 ) {
                   listSearchableFields.push(useAsTitle);
                 }
-                const { search, where = { or: [] } } = qs.parse(req.query, {
+                const { search, where = { or: [] } } = (qs.parse(req.query, {
                   depth: 10,
                   ignoreQueryPrefix: true,
-                }) || { where: { or: [] } };
+                }) || { where: { or: [] } }) as { search?: string; where?: Where };
                 if (search) {
                   if (!where.or) {
                     where.or = [];

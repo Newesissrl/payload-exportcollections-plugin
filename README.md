@@ -6,6 +6,8 @@ Extends `mzinga` with the ability to export all collection's data to CSV or JSON
 
 `npm install @newesissrl/payload-exportcollections-plugin`
 
+`mzinga` (`^1.0.5`), `react` and `react-i18next` are peer dependencies: the plugin uses the copies installed by the host application, so only one Mzinga instance is loaded.
+
 ## Get Started
 
 ### mzinga.config.ts
